@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.28)  28 MAY 2018 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.28)  28 MAY 2018 17:37
 entering extended mode
 **./numerik3.tex
 (numerik3.tex
@@ -1741,42 +1741,42 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 35.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 42.
+(babel)             in language  on input line 46.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 42.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 49.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 46.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 53.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 53.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 57.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 60.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
  (numerik3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
 Package rerunfilecheck Info: File `numerik3.out' has not changed.
 (rerunfilecheck)             Checksum: C50EE58DF6555FE83D22A5556ED910C3;293.
  ) 
 Here is how much of TeX's memory you used:
- 23292 strings out of 493334
- 431596 string characters out of 3140108
- 581262 words of memory out of 3000000
+ 23293 strings out of 493334
+ 431610 string characters out of 3140108
+ 582262 words of memory out of 3000000
  26547 multiletter control sequences out of 15000+200000
  42667 words of font info for 105 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1789,9 +1789,9 @@ pfb><Y:/Programme/MiKTex Latex/fonts/type1/public/txfonts/txexa.pfb><Y:/Program
 me/MiKTex Latex/fonts/type1/public/txfonts/txsy.pfb><Y:/Programme/MiKTex Latex/
 fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Programme/MiKTex Latex/fonts/type1/urw/
 times/utmr8a.pfb><Y:/Programme/MiKTex Latex/fonts/type1/urw/times/utmri8a.pfb>
-Output written on numerik3.pdf (2 pages, 59139 bytes).
+Output written on numerik3.pdf (2 pages, 62140 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
+ 78 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
