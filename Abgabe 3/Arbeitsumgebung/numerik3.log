@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.28)  28 MAY 2018 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.28)  28 MAY 2018 17:29
 entering extended mode
 **./numerik3.tex
 (numerik3.tex
@@ -1741,48 +1741,57 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 35.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 49.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 44.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
+(babel)             in language  on input line 49.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 53.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 56.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 56.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 56.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (numerik3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `numerik3.out' has not changed.
-(rerunfilecheck)             Checksum: B7D8514FDC2620907995043D8592D217;203.
+(rerunfilecheck)             Checksum: C50EE58DF6555FE83D22A5556ED910C3;293.
  ) 
 Here is how much of TeX's memory you used:
- 23276 strings out of 493334
- 431457 string characters out of 3140108
- 580262 words of memory out of 3000000
- 26545 multiletter control sequences out of 15000+200000
- 36329 words of font info for 94 fonts, out of 3000000 for 9000
+ 23292 strings out of 493334
+ 431596 string characters out of 3140108
+ 581262 words of memory out of 3000000
+ 26547 multiletter control sequences out of 15000+200000
+ 42667 words of font info for 105 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,7n,66p,10387b,843s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,15n,66p,10387b,843s stack positions out of 5000i,500n,10000p,200000b,50000s
 {Y:/Programme/MiKTex Latex/fonts/enc/dvips/fontname/8r.enc}<Y:/Programme/MiKT
-ex Latex/fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Programme/MiKTex Latex/fonts/t
-ype1/urw/times/utmr8a.pfb>
-Output written on numerik3.pdf (2 pages, 26971 bytes).
+ex Latex/fonts/type1/public/amsfonts/cm/cmr10.pfb><Y:/Programme/MiKTex Latex/fo
+nts/type1/public/txfonts/rtxmi.pfb><Y:/Programme/MiKTex Latex/fonts/type1/publi
+c/txfonts/rtxsc.pfb><Y:/Programme/MiKTex Latex/fonts/type1/public/txfonts/txex.
+pfb><Y:/Programme/MiKTex Latex/fonts/type1/public/txfonts/txexa.pfb><Y:/Program
+me/MiKTex Latex/fonts/type1/public/txfonts/txsy.pfb><Y:/Programme/MiKTex Latex/
+fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Programme/MiKTex Latex/fonts/type1/urw/
+times/utmr8a.pfb><Y:/Programme/MiKTex Latex/fonts/type1/urw/times/utmri8a.pfb>
+Output written on numerik3.pdf (2 pages, 59139 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 77 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

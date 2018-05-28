@@ -33,9 +33,18 @@
 	\setcounter{chapter}{3}
 
 	\section{Problemstellung}
-
+	
+	\begin{align}
+	\epsilon(T)=&~\dfrac{1}{Z}\underbrace{\int\limits_0^\infty~\rho\left(\nu,T\right)\cdot\left[1-f(\nu\right]~\dif\nu}_{\text{numerischer Teil}}~,~~~~Z=\underbrace{\int\limits_0^\infty~\rho\left(\nu,T\right)~\dif\nu}_{\text{analytischer Teil}}
+	\end{align}
 	
 	\section{Lösung des Problems}
+	\subsection{Lösung des analytischen Integrals}
+	Über eine \textsc{Taylor}entwicklung über den Ausdruck $\dfrac{1}{\euler^x-1}$ ergibt sich mittels Partieller Integration:
+	\begin{align}
+		Z=&~\sum_{m}^{\infty}\dfrac{48\pi~k^4}{c^3~h^3~m^4}~T^4~~.
+	\end{align}
+	Dies kann nun bis zu einer bestimmten Genauigkeit implementiert werden.
 	
 	\section{Ergebnis}
 	
