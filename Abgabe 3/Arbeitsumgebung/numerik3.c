@@ -20,10 +20,10 @@ double rho(double ny, double T){
 double sigma(double ny){
 	return (S_2*Gamma/(M_PI*pow((ny-nu_2),2)+pow(Gamma,2)))+(S_3*Gamma/(M_PI*pow((ny-nu_3),2)+pow(Gamma,2)));
 }
-double f(double ny,double eta){
+double f(double eta,double ny){
 	return exp(-N_0*eta*sigma(ny));
 }
-double Z_I(double T,double Genauigkeit){
+double Z_I(double Genauigkeit,double T){
 	double Z = 1.0;
     double Wert = 0.0;
     double m = 1;
@@ -56,7 +56,21 @@ double Integral(double l, double n,double T, double eta){
     }
     return sum*(h/3);
 }
-
+double epsilon(double l,double n,double T,double eta,double Genauigkeit){
+    return Z_I(Genauigkeit,T)*Integral(l,n,T,eta);
+}
+double Fixpunkt (l,n,Tstart,Genauigkeit, eta){
+    double TE=Tstart;
+    double wert=0.0;
+    double T=TE;
+    while((TE-wert)/TE>Genauigkeit){
+        wert=TE;
+        TE = T_S*pow((epsilon_S*(2-epsilon(l,n,T_S,eta,Genauigkeit))/(2-epsilon(l,n,T,eta,Genauigkeit))),(1/4));
+        T=TE;
+    }
+    return TE;
+}
 int main(){
+    printf("%f",Fixpunkt(10,50,100,1e-9,1));
     return 0;
 }
