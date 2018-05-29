@@ -100,13 +100,11 @@ class treibhaus:
         Summe2 = Tstart
         while True:
             Summe1 = T_S*(epsilon_S*(2-treibhaus.epsilon(l,n,T_S,eta,Genauigkeit))/(2-treibhaus.epsilon(l,n,Summe1,eta,Genauigkeit)))**(1/4)
-            if abs(Summe1-Summe2) < Genauigkeit:    #genauigkeit Erreicht
+            if abs(Summe1-Summe2) < Genauigkeit:    #Genauigkeit erreicht
                 break
             Summe2 = Summe1
         return Summe1
         
 
-#nicht schön aber erfüllt hier den Zweck:
+
 print("\n\nDie mittlere Erdtemperatur in °C mit n=1 ist somit:",treibhaus.Fixpunkt(1e16,100001,300,1e-9,1)-273.25)
-
-
