@@ -40,6 +40,7 @@ double Z_I(double Genauigkeit,double T){
 double Simpson(nu,eta,T){
     return rho(nu,T)*(1-f(eta,nu));
 }
+
 double Integral(double l, double n,double T, double eta){
     double h=l/n;
     int i=1;
