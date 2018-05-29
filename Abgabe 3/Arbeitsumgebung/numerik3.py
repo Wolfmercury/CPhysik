@@ -24,7 +24,8 @@ class treibhaus:
     #output: rho
     #berechnung der spektralen Energiedichte fuer unpolarisierte Strahlung
     def rho(nu,T):
-        Rechnung = ((8*np.pi*planck*nu**3)/(c**3)) * 1/((np.exp((planck*nu)/(k*T)))-1)
+        Rechnung = ((8*np.pi*planck)/(c**3))*nu**3/(np.exp((planck*nu)/(k*T))-1)
+        #print(nu)
         return Rechnung   
     
     #input: Frequent nu
@@ -32,6 +33,7 @@ class treibhaus:
     #Formel für Wirkungsquerschnitt
     def sigma(nu):
         Wert = (S_2/np.pi)*Gamma/((nu-nu_2)**2+Gamma**2) + (S_3/np.pi)*Gamma/((nu-nu_3)**2+Gamma**2)
+       # print(nu,Wert)
         return Wert
     
     #input: n_schlange (hier eta) und nu
@@ -44,26 +46,28 @@ class treibhaus:
     #Für das Integral nach Simpsons benötigte hilfsfunktion
     def Simpson_Fkt(nu,eta,T):
         Wert = treibhaus.rho(nu,T)*(1-treibhaus.f(eta,nu))
+        #print(treibhaus.rho(nu,T))
         return Wert
 
     #input; l: Breite des Intervalls, n: Anzahl Stützstellen (Gerade), T: Temperatur, eta: n schlange
     #output: Integral
     #numerische Berechnung des Integrals nach Simpson
     def Integral_S(l,n,T,eta):
-        h = l / n           #Schrittweite
-        Summe = 0   
-        i = h               #laufindex
-        m = 0
-        while m < n:    #bis zur vorletzten Schrittweite
-            if m % 2 == 0:  #Gerader Koeffizient    (für Gewichtung)
-                Summe += 4*treibhaus.Simpson_Fkt(i,eta,T)
-            else:           #ungerade Koeffizient
-                Summe += 2*treibhaus.Simpson_Fkt(i,eta,T)
-            i += h          #um Schrittweise höhere Index
-            m += 1
-        Summe += treibhaus.Simpson_Fkt(l,eta,T) #aufsummieren der Stützwerte am Beginn und am Ende der Fkt. (Beginn hier 0)
+        Summe = 0   #Gesammte Summe
+        h = abs(l-1)/n  #breite eines intervalls
+        xi1 = 1         #für die ungeraden Intervallschritte
+        xi2 = 1+h       #für die geraden Intervallschritte
+        u = 0           #laufindex
+        while u<n:
+            if u % 2 == 0:  #gerade komponenten
+                xi1 += 2*h
+                Summe += 2*treibhaus.Simpson_Fkt(xi1,eta,T)
+            else:           #ungerade
+                Summe += 4*treibhaus.Simpson_Fkt(xi2,eta,T)
+                xi2 += 2*h
+            u += 1
+        Summe += treibhaus.Simpson_Fkt(1,eta,T) +treibhaus.Simpson_Fkt(l-h,eta,T)   #Randterme
         return (h/3)*Summe
-        
          
     #input: Temperatur T und gewünschte Genauigkeit
     #Output: 1/analytische Lösung des Integrals über die spektrale Energiedichte rho
@@ -82,7 +86,7 @@ class treibhaus:
         
     
     #input: l: Breite des Intervalls, n: Anzahl Stützstellen (Gerade), T: Temperatur,Genauigkeit, eta: n_schlange 
-    #output: epsilon von gewünschter Temperatur und n_schlange 
+    #output: epsilon von gewünschter Temperatur und n_schlange #
     #Funktion Epsilon, die das produktder analytischen Lösung von 1/Z und die numerischen nach Simpson berechnet    
     def epsilon(l,n,T,eta,Genauigkeit):
         Wert = treibhaus.Z_Integral(Genauigkeit,T)*treibhaus.Integral_S(l,n,T,eta)
@@ -92,19 +96,17 @@ class treibhaus:
     #output: mittlere Erdtemperatur als Funktion von n schlange (tilde) in [K]
     #Fixpunktgleichung zum Lösen der Gleichung mit einen Unbekannten    
     def Fixpunkt(l,n,Tstart,Genauigkeit,eta):
-        TE = Tstart #damit while schleife kein division by zero error
-        Wert = 0
-        T = Tstart  #Starttemperatur
-        while (TE-Wert)/TE > Genauigkeit:
-            Wert = TE
-            TE = T_S*(epsilon_S*(2-treibhaus.epsilon(l,n,T_S,eta,Genauigkeit))/(2-treibhaus.epsilon(l,n,T,eta,Genauigkeit)))**(1/4)
-            T = TE
-        return TE
-        
+        Summe1 = Tstart         #Starttemperatur
+        Summe2 = Tstart
+        while True:
+            Summe1 = T_S*(epsilon_S*(2-treibhaus.epsilon(l,n,T_S,eta,Genauigkeit))/(2-treibhaus.epsilon(l,n,Summe1,eta,Genauigkeit)))**(1/4)
+            if abs(Summe1-Summe2) < Genauigkeit:    #genauigkeit Erreicht
+                break
+            Summe2 = Summe1
+        return Summe1
         
 
-print(treibhaus.Fixpunkt(100,500,300,1e-9,1))
+#nicht schön aber erfüllt hier den Zweck:
+print("\n\nDie mittlere Erdtemperatur in °C mit n=1 ist somit:",treibhaus.Fixpunkt(1e16,100001,300,1e-9,1)-273.25)
 
-#eta:1: Zimmertemperatur
-#eta:2: groeßenordnung e8 ca
 
