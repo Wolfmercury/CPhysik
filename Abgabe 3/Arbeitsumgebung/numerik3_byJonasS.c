@@ -122,7 +122,7 @@ double F (double t, double n) {
 // output: ergebnis (mittlere erdtemperatur als funktion von n
 //	   und in kelvin)
 double fixpunkt ( double n, double start, double epsilon) {
-  double sum1 = start;		// speichert das ergebnis von i
+  double sum1 = start;			// speichert das ergebnis von i
   double sum2 = start;          // speichert das ergebnis von i-1
   int i;
   double ergebnis;
