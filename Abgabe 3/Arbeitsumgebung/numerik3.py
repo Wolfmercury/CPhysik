@@ -24,7 +24,7 @@ class treibhaus:
     #output: rho
     #berechnung der spektralen Energiedichte fuer unpolarisierte Strahlung
     def rho(nu,T):
-        Rechnung = ((8*np.pi*planck*nu**3)/(c**3)) * 1/(np.exp((planck*nu)/(k*T))-1)
+        Rechnung = ((8*np.pi*planck*nu**3)/(c**3)) * 1/((np.exp((planck*nu)/(k*T)))-1)
         return Rechnung   
     
     #input: Frequent nu
@@ -53,14 +53,17 @@ class treibhaus:
         h = l / n           #Schrittweite
         Summe = 0   
         i = h               #laufindex
-        while i < n:    #bis zur vorletzten Schrittweite
-            if i % 2 == 0:  #Gerader Koeffizient    (für Gewichtung)
+        m = 0
+        while m < n:    #bis zur vorletzten Schrittweite
+            if m % 2 == 0:  #Gerader Koeffizient    (für Gewichtung)
                 Summe += 4*treibhaus.Simpson_Fkt(i,eta,T)
             else:           #ungerade Koeffizient
                 Summe += 2*treibhaus.Simpson_Fkt(i,eta,T)
             i += h          #um Schrittweise höhere Index
+            m += 1
         Summe += treibhaus.Simpson_Fkt(l,eta,T) #aufsummieren der Stützwerte am Beginn und am Ende der Fkt. (Beginn hier 0)
         return (h/3)*Summe
+        
          
     #input: Temperatur T und gewünschte Genauigkeit
     #Output: 1/analytische Lösung des Integrals über die spektrale Energiedichte rho
@@ -76,6 +79,7 @@ class treibhaus:
             Z += (48*np.pi*k**4*T**4)/(c**3*planck**3*m**4) #Summand der analytischen Lösung
             m += 1
         return 1/Z
+        
     
     #input: l: Breite des Intervalls, n: Anzahl Stützstellen (Gerade), T: Temperatur,Genauigkeit, eta: n_schlange 
     #output: epsilon von gewünschter Temperatur und n_schlange 
@@ -97,9 +101,9 @@ class treibhaus:
             T = TE
         return TE
         
+        
 
-
-print(treibhaus.Fixpunkt(10,50,100,1e-9,1))
+print(treibhaus.Fixpunkt(100,500,300,1e-9,1))
 
 #eta:1: Zimmertemperatur
 #eta:2: groeßenordnung e8 ca
