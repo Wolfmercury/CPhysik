@@ -53,7 +53,7 @@
 	
 	\subsection{Lösung des numerischen Integrals}
 	Mithilfe der \textsc{Simpson}schen Regel kann der numerische Teil von $\epsilon(T)$ über eine gerade Anzahl von $n$ Stützstellen berechnet werden.
-	(verarbeitet in den Funktionen \glqq Simpson\_Fkt\grqq~und \glqq Integral\_S\grqq)
+	(verarbeitet in den Funktionen\textit{ \glqq Simpson\_Fkt\grqq}~und \textit{\glqq Integral\_S\grqq})
 	\begin{align}
 		\int\limits_a^b~f(x)~\dif x =&~\dfrac{h}{3}\left(f_a+4f_1+2f_2+4f_3+\dots+4f_{n-1}+f_b\right)+\mathcal{O}\left(h^4\right)~~,
 	\end{align}
@@ -64,14 +64,43 @@
 	\begin{align}
 		T_E=&~T_S\sqrt[4]{\dfrac{\epsilon_S\cdot\left(2-\epsilon\left(T_S\right)\right)}{2-\epsilon\left(T_E\right)}}~~.
 	\end{align}
-	Nun kann man über den Fixpunktansatz rekursiv ($x_{k+1}=T_E(x_k)$)  eine Näherung für die Gleichung bestimmen. (siehe Funktion \glqq Fixpunkt\grqq)
-	
-	
+	Nun kann man über den Fixpunktansatz rekursiv ($x_{k+1}=T_E(x_k)$)  eine Näherung für die Gleichung bestimmen. (siehe Funktion \textit{\glqq Fixpunkt\grqq})
+		
+
 	\section{Ergebnis}
-	Gefordert war die Lösung des Problems explizit für $\tilde{n}=1$.
+	Gefordert war die Lösung des Problems explizit für $\tilde{n}=1$, welches für  $T_E=$\underline{$25.45^\circ$C} ergibt. Dieser Wert passt gut in die Erwartung, da mit diesen Werten die Anzahl der CO$_2$-Moleküle den momentanen Stand darstellen. Größere Werte von $\tilde{n}$ beschreiben das Fortschreiten des Treibhauseffektes; dies ergibt eine konvergierende Kurve, welche in \figureref{B1} zu finden ist.
 
 	
 	\section{Anhang}
+	\begin{figure}[H]
+		\flushleft
+		\includegraphics[width=1\textwidth]{Konvergenz}
+		\caption{Konvergenz der nichtlinearen Gleichung für wachsende $\tilde{n}$. Mit Werten: \tableref{T1}.}
+		\label{B1}
+	\end{figure}
 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|l}
+			\textbf{$T_E$}&\textbf{$\tilde{n}$}\\\hline
+				25.4529162&1\\
+				33.4676782&2\\
+				38.8769997&3\\
+				42.7499765&4\\
+				45.5783748&5\\
+				47.6588755&6\\
+				49.1915598&7\\
+				50.3182622&8\\
+				51.1419588&9\\
+				51.7383605&10\\
+				52.163556&11\\
+				52.4593226&12\\
+				52.6569166&13\\
+				52.7798176&14\\
+				52.8457325&15 
+		\end{tabular}
+	\caption{Zugehörigen Werte zum Plot}
+	\label{T1}
+	\end{table}
 	
 \end{document}

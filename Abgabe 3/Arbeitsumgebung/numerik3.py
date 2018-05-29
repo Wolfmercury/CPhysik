@@ -108,3 +108,6 @@ class treibhaus:
 
 
 print("\n\nDie mittlere Erdtemperatur in °C mit n=1 ist somit:",treibhaus.Fixpunkt(1e16,100001,300,1e-9,1)-273.25)
+
+#Es erscheint zwar eine Fehlermeldung: "RuntimeWarning:overflow encountered in exp", diese beschreibt allerdings nur, dass in einem Fall der Wert der exp-Funktion zu groß für Pythons float64 ist
+#Das ergebnis ist davon allerdings nicht beeinflusst
