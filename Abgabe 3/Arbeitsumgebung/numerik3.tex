@@ -33,14 +33,15 @@
 	\setcounter{chapter}{3}
 
 	\section{Problemstellung}
-	Die nicht-Lineare Gleichung
+	Der Treibhauseffekt soll an einem einfachen Modell untersucht werden, indem die mittlere Temperatur der Erde $T_E$ durch eine nichtlineare Gleichung berechnet wird. Das betrachtete System wird in einen Gleichgewichtszustand angenommen und über die drei Gleichgewichte des Strahlungsverhaltens von der Atmosphäre, der Sonne und der Erde selbst kann die entscheidende Gleichung entzogen werden:
 	\begin{align}
-		\left[2-\epsilon\left(T_E\right)\right]\cdot T_E^4=&~\epsilon_S\left[2-\epsilon\left(T_S\right)\right]\cdot T_S^4
+		\left[2-\epsilon\left(T_E\right)\right]\cdot T_E^4=&~\epsilon_S\left[2-\epsilon\left(T_S\right)\right]\cdot T_S^4~~.	\label{31}
 	\end{align}
-	soll gelöst werden. Diese Gleichung entsteht durch das Gleichgewicht der Strahlung und Strahlungsreflektion der Sonne, der Atmosphäre und der Erde. Kombiniert man nämlich jene Gleichungen (die über das \textsc{Stefan-Boltzmann}-Gesetz entnommen werden) folgt jene Gleichung daraus.
+	Hier ist $\epsilon_S$ die effektive Emissivität der Sonne und $\epsilon\left(T\right)$ die der Atmosphäre in Abhängigkeit der Temperatur:
 	\begin{align}
-	\epsilon(T)=&~\dfrac{1}{Z}\underbrace{\int\limits_0^\infty~\rho\left(\nu,T\right)\cdot\left[1-f(\nu\right]~\dif\nu}_{\text{numerischer Teil}}~,~~~~Z=\underbrace{\int\limits_0^\infty~\rho\left(\nu,T\right)~\dif\nu}_{\text{analytischer Teil}}
+	\epsilon(T)=&~\dfrac{1}{Z}\underbrace{\int\limits_0^\infty~\rho\left(\nu,T\right)\cdot\left[1-f(\nu\right]~\dif\nu}_{\text{numerischer Teil}}~,~~~~Z=\underbrace{\int\limits_0^\infty~\rho\left(\nu,T\right)~\dif\nu}_{\text{analytischer Teil}}~~.
 	\end{align}
+	Diese zwei Gleichungen stellen den Kern des Problems da. Gesucht ist die Gleichgewichtstemperatur der Erde, $T_E$, in Abhängigkeit von $\tilde{n}$, das die Luftsäulendichte als Anteil von $N$ beschreibt.	
 	
 	\section{Lösung des Problems}
 	\subsection{Lösung des analytischen Integrals}
@@ -50,8 +51,24 @@
 	\end{align}
 	Dies kann nun bis zu einer bestimmten Genauigkeit implementiert werden.
 	
-	\section{Ergebnis}
+	\subsection{Lösung des numerischen Integrals}
+	Mithilfe der \textsc{Simpson}schen Regel kann der numerische Teil von $\epsilon(T)$ über eine gerade Anzahl von $n$ Stützstellen berechnet werden.
+	\begin{align}
+		\int\limits_a^b~f(x)~\dif x =&~\dfrac{h}{3}\left(f_a+4f_1+2f_2+4f_3+\dots+4f_{n-1}+f_b\right)+\mathcal{O}\left(h^4\right)~~,
+	\end{align}
+	wobei $h=\dfrac{b-a}{n}$ die Schrittweite ist.
 	
+	
+	\subsection{Lösung der nichtlinearen Gleichung}
+	Die nichtlineare Gleichung \eqref{31} lässt sich umformen zu
+	\begin{align}
+		T_E=&~T_S\sqrt[4]{\dfrac{\epsilon_S\cdot\left(2-\epsilon\left(T_S\right)\right)}{2-\epsilon\left(T_E\right)}}~~.
+	\end{align}
+	Nun kann man über den Fixpunktansatz rekursiv ($x_{k+1}=T_E(x_k)$)  eine Näherung für die Gleichung bestimmen.
+	
+	
+	\section{Ergebnis}
+	Gefordert war die Lösung des Problems explizit für $\tilde{n}=1$.
 
 	
 	\section{Anhang}
