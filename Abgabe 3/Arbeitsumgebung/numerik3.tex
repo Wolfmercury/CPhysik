@@ -53,18 +53,18 @@
 	
 	\subsection{Lösung des numerischen Integrals}
 	Mithilfe der \textsc{Simpson}schen Regel kann der numerische Teil von $\epsilon(T)$ über eine gerade Anzahl von $n$ Stützstellen berechnet werden.
+	(verarbeitet in den Funktionen \glqq Simpson\_Fkt\grqq~und \glqq Integral\_S\grqq)
 	\begin{align}
 		\int\limits_a^b~f(x)~\dif x =&~\dfrac{h}{3}\left(f_a+4f_1+2f_2+4f_3+\dots+4f_{n-1}+f_b\right)+\mathcal{O}\left(h^4\right)~~,
 	\end{align}
 	wobei $h=\dfrac{b-a}{n}$ die Schrittweite ist.
-	
 	
 	\subsection{Lösung der nichtlinearen Gleichung}
 	Die nichtlineare Gleichung \eqref{31} lässt sich umformen zu
 	\begin{align}
 		T_E=&~T_S\sqrt[4]{\dfrac{\epsilon_S\cdot\left(2-\epsilon\left(T_S\right)\right)}{2-\epsilon\left(T_E\right)}}~~.
 	\end{align}
-	Nun kann man über den Fixpunktansatz rekursiv ($x_{k+1}=T_E(x_k)$)  eine Näherung für die Gleichung bestimmen.
+	Nun kann man über den Fixpunktansatz rekursiv ($x_{k+1}=T_E(x_k)$)  eine Näherung für die Gleichung bestimmen. (siehe Funktion \glqq Fixpunkt\grqq)
 	
 	
 	\section{Ergebnis}
