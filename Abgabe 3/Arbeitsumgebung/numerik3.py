@@ -88,18 +88,19 @@ class treibhaus:
     #output: mittlere Erdtemperatur als Funktion von n schlange (tilde) in [K]
     #Fixpunktgleichung zum Lösen der Gleichung mit einen Unbekannten    
     def Fixpunkt(l,n,Tstart,Genauigkeit,eta):
-        TE = Tstart #=1 damit while schleife kein division by zero error
+        TE = Tstart #damit while schleife kein division by zero error
         Wert = 0
-        T = Tstart
+        T = Tstart  #Starttemperatur
         while (TE-Wert)/TE > Genauigkeit:
             Wert = TE
-            TE = T_S*((epsilon_S*(2-treibhaus.epsilon(l,n,T_S,eta,Genauigkeit)))/(2-treibhaus.epsilon(l,n,T,eta,Genauigkeit)))**(1/4)
+            TE = T_S*(epsilon_S*(2-treibhaus.epsilon(l,n,T_S,eta,Genauigkeit))/(2-treibhaus.epsilon(l,n,T,eta,Genauigkeit)))**(1/4)
             T = TE
         return TE
         
 
 
-print(treibhaus.Fixpunkt(10,50,100,1e-8,1))
+print(treibhaus.Fixpunkt(10,50,100,1e-9,1))
+
 #eta:1: Zimmertemperatur
 #eta:2: groeßenordnung e8 ca
 
